@@ -126,16 +126,18 @@
   button#generate-password {
     width: 500px;
     height: 50px;
-    background-color: cornflowerblue;
+    background-color: rgb(100, 149, 237);
     color: white;
     font-size: x-large;
     box-shadow: 1px 0px 20px 0px #e8e8e8;
     border-radius: 7px;
-    border: none;
+    border: none ;
   }
 
   button#generate-password:active {
-    box-shadow: 0px 0px 20px 0px #e8e8e8;
+    box-shadow: none;
+    background-color: rgb(100, 145, 237);
+
   }
 
 </style>
