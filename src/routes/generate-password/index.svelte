@@ -64,7 +64,7 @@
 
 <main>
   <article>
-    <div>
+    <div id="passowrd">
       <label for="password-length">Password Length</label>
       <input id="password-length" type="text" bind:value={lenght} />
     </div>
@@ -73,7 +73,7 @@
       <Checkbox bind:apply={use} bind:name bind:chars />
     {/each}
 
-    <button on:click={() => generatePassword(lenght)}>
+    <button id="generate-password" on:click={() => generatePassword(lenght)}>
       Generate Password
     </button>
   </article>
@@ -85,12 +85,19 @@
 </main>
 
 <style>
+  main {
+    font-family: "Hind Siliguri", sans-serif;
+  }
   main,
   article {
     border: 1px solid #ccc;
     padding: 1em;
     margin: 1em;
     border: none;
+  }
+  article {
+    box-shadow: 1px 0px 20px 0px #e8e8e8;
+    border-radius: 7px;
   }
   /* inline elements inside article */
   article > * {
@@ -103,4 +110,32 @@
     text-align: center;
     cursor: pointer;
   }
+
+  div#passowrd {
+    display: grid;
+    grid-template-columns: 140px 10px 500px;
+    grid-gap: 8px;
+    margin: 16px;
+  }
+  /* the input should be in the second column */
+  #password-length {
+    grid-column: 2;
+    width: 200px;
+  }
+
+  button#generate-password {
+    width: 500px;
+    height: 50px;
+    background-color: cornflowerblue;
+    color: white;
+    font-size: x-large;
+    box-shadow: 1px 0px 20px 0px #e8e8e8;
+    border-radius: 7px;
+    border: none;
+  }
+
+  button#generate-password:active {
+    box-shadow: 0px 0px 20px 0px #e8e8e8;
+  }
+
 </style>
